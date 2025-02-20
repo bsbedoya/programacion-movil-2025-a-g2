@@ -137,4 +137,4 @@ git log --oneline --graph --all
 
 ---
 
-📌 **¡Listo! Ahora tienes lo básico para trabajar con Git en proyectos colaborativos. 🚀**
+
