@@ -29,7 +29,6 @@
 | | `git commit -m "Conflictos resueltos"` | Crear un commit después de resolver conflictos |
 | **📜 Ver el Historial de Cambios** | `git log --oneline --graph --all` | Ver el historial de commits en forma gráfica |
 
----
-🚀 ¡Ahora estás listo para trabajar con Git! 🎉
+
 
 
