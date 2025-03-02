@@ -41,7 +41,7 @@
 - 🔹 Creación de un mockup para la HU del **Carrito de Compras**.  
 - 🔹 Diseño libre, revisado en clase.  
 - 🔹 Introducción a **Figma**.  
-- 🔗 **Enlace del Mockup:** [Ver en Figma](https://www.figma.com/design/9YQWZcxBAPtjTw3zof232V/Untitled?node-id=0-1&t=jjv5z20sWrxF5w8I-1)  
+- 🔗 **Enlace del Mockup:** [Ver en Figma](https://www.figma.com/design/NIEpjfQmtZMCts9b4FzQAp/Untitled?node-id=0-1&t=nn1rIwqPMCYFKEzU-1)  
 
 ### **Planes para la Próxima Semana**  
 - 📌 Continuar trabajando con **Figma** en los mockups.  
