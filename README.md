@@ -1,142 +1,35 @@
 # 📌 🚀 Guía Básica de Git
 
-## 🛠️ Configuración Inicial
-Antes de empezar, asegúrate de configurar tu usuario en Git:
-
-```sh
-# 📝 Configurar el usuario y correo
-git config --global user.name "TuNombre"
-git config --global user.email "tuemail@example.com"
-```
-
-## 📂 Inicializar un Repositorio
-
-```sh
-# 🏗️ Crear un nuevo repositorio local
-git init
-```
-
-## 🌎 Clonar un Repositorio
-Si quieres trabajar en un proyecto existente:
-
-```sh
-# 🔗 Clonar un repositorio
-git clone https://github.com/usuario/repositorio.git
-```
-
-## 📌 Estados Básicos en Git
-
-```sh
-# 🔍 Ver el estado actual de los archivos
-git status
-
-# 📌 Agregar un archivo específico al área de preparación
-git add archivo.txt
-
-# 📌 Agregar todos los archivos modificados
-git add .
-```
-
-## 📜 Realizar un Commit
-
-```sh
-# 📝 Confirmar los cambios con un mensaje descriptivo
-git commit -m "Descripción del cambio"
-```
-
-## 📤 Subir Cambios al Repositorio Remoto (Push)
-
-```sh
-# 📡 Enviar los cambios a la rama principal del repositorio remoto
-git push origin main
-```
-
-Si es la primera vez que haces push en una rama nueva:
-
-```sh
-# 🚀 Subir una nueva rama
-git push --set-upstream origin nombre-rama
-```
-
-## 📥 Descargar Cambios del Repositorio (Pull)
-
-```sh
-# 🔄 Obtener cambios y fusionarlos automáticamente
-git pull origin main
-```
-
-## 🌿 Manejo de Ramas
-
-```sh
-# 🔍 Ver todas las ramas locales
-git branch
-
-# 🌱 Crear una nueva rama
-git branch nombre-rama
-
-# 🔄 Cambiar a otra rama
-git checkout nombre-rama
-
-# 🚀 Crear y cambiar a una nueva rama en un solo comando
-git checkout -b nombre-rama
-```
-
-## 🔀 Fusionar Ramas
-
-```sh
-# 🔄 Cambiar a la rama principal
-git checkout main
-
-# 🔗 Fusionar cambios de otra rama
-git merge nombre-rama
-```
-
-## 🗑️ Eliminar Ramas
-
-```sh
-# ❌ Eliminar una rama local
-git branch -d nombre-rama
-
-# ❌ Eliminar una rama en el repositorio remoto
-git push origin --delete nombre-rama
-```
-
-## 🗑️ Eliminar Archivos
-
-```sh
-# 🗂️ Eliminar un archivo localmente
-git rm archivo.txt
-
-# ✅ Confirmar la eliminación
-git commit -m "Archivo eliminado"
-
-# 📤 Enviar los cambios al repositorio remoto
-git push origin main
-
-# 🚮 Eliminar un archivo en el repositorio remoto (después de eliminarlo localmente y hacer push)
-git push origin --delete archivo.txt
-```
-
-## ⚠️ Resolver Conflictos
-Si hay conflictos al hacer un `merge` o `pull`, Git te pedirá que resuelvas manualmente los archivos en conflicto. Luego:
-
-```sh
-# 🛠️ Marcar los archivos como resueltos
-git add archivo_resuelto.txt
-
-# 📜 Crear un commit después de resolver conflictos
-git commit -m "Conflictos resueltos"
-```
-
-## 📜 Ver el Historial de Cambios
-
-```sh
-# 🔎 Ver historial de commits
-git log --oneline --graph --all
-```
+| 🏷️ Sección | 📌 Comando | 📝 Descripción |
+|------------|------------|---------------|
+| **🛠️ Configuración Inicial** | `git config --global user.name "TuNombre"` | Configurar el nombre del usuario |
+| | `git config --global user.email "tuemail@example.com"` | Configurar el correo del usuario |
+| **📂 Inicializar un Repositorio** | `git init` | Crear un nuevo repositorio local |
+| **🌎 Clonar un Repositorio** | `git clone https://github.com/usuario/repositorio.git` | Clonar un repositorio remoto |
+| **📌 Estados Básicos en Git** | `git status` | Ver el estado actual de los archivos |
+| | `git add archivo.txt` | Agregar un archivo al área de preparación |
+| | `git add .` | Agregar todos los archivos modificados |
+| **📜 Realizar un Commit** | `git commit -m "Descripción del cambio"` | Confirmar cambios con un mensaje descriptivo |
+| **📤 Subir Cambios al Repositorio Remoto (Push)** | `git push origin main` | Subir cambios a la rama principal |
+| | `git push --set-upstream origin nombre-rama` | Subir una nueva rama al remoto |
+| **📥 Descargar Cambios del Repositorio (Pull)** | `git pull origin main` | Obtener cambios y fusionarlos automáticamente |
+| **🌿 Manejo de Ramas** | `git branch` | Ver todas las ramas locales |
+| | `git branch nombre-rama` | Crear una nueva rama |
+| | `git checkout nombre-rama` | Cambiar a otra rama |
+| | `git checkout -b nombre-rama` | Crear y cambiar a una nueva rama en un solo comando |
+| **🔀 Fusionar Ramas** | `git checkout main` | Cambiar a la rama principal |
+| | `git merge nombre-rama` | Fusionar cambios de otra rama |
+| **🗑️ Eliminar Ramas** | `git branch -d nombre-rama` | Eliminar una rama local |
+| | `git push origin --delete nombre-rama` | Eliminar una rama en el repositorio remoto |
+| **🗑️ Eliminar Archivos** | `git rm archivo.txt` | Eliminar un archivo localmente |
+| | `git commit -m "Archivo eliminado"` | Confirmar la eliminación del archivo |
+| | `git push origin main` | Subir los cambios al repositorio remoto |
+| | `git push origin --delete archivo.txt` | Eliminar un archivo en el repositorio remoto |
+| **⚠️ Resolver Conflictos** | `git add archivo_resuelto.txt` | Marcar los archivos como resueltos |
+| | `git commit -m "Conflictos resueltos"` | Crear un commit después de resolver conflictos |
+| **📜 Ver el Historial de Cambios** | `git log --oneline --graph --all` | Ver el historial de commits en forma gráfica |
 
 ---
 🚀 ¡Ahora estás listo para trabajar con Git! 🎉
-
 
 
