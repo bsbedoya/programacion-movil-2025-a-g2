@@ -136,5 +136,7 @@ git log --oneline --graph --all
 ```
 
 ---
+🚀 ¡Ahora estás listo para trabajar con Git! 🎉
+
 
 
