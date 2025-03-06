@@ -1,0 +1,3 @@
+🔗 Enlace público de Trello con las tres HU documentadas:https://trello.com/invite/b/67c6fce7767defce539ccad8/ATTI4c11e3eb5106da1201b46bdfe277919b52A1CE4F/aplicacion-movil-para-la-gestion-y-control-de-vuelos 
+🔗 Enlace público de Figma con el diseño de HU3:https://www.figma.com/design/7DonA7D7ZLTUaYejz6aV6u/Untitled?node-id=0-1&t=g2ZqZ4YxvjFB4H3C-1
+🔗 Enlace del repositorio en Git : https://github.com/bsbedoya/programacion-movil-2025-a-g2
