@@ -35,24 +35,12 @@ Elegir la plataforma correcta para desarrollar una aplicación móvil es clave p
 ✅ Desarrollo rápido, fácil de aprender, compatible con apps web.  
 ❌ Bajo rendimiento, UX menos nativa.
 
-## 🔧 Soporte y Comunidad
 
-- **Flutter**: Soportado por Google, documentación oficial y comunidad creciente en GitHub.
-- **React Native**: Respaldado por Meta (Facebook), gran cantidad de librerías y soporte en foros.
-- **Ionic**: Open-source con soporte empresarial y compatibilidad con Angular, React y Vue.
-
-## 📊 Conclusiones
+## Conclusiones
 
 - **Si buscas el mejor rendimiento:** 🏆 *Flutter es la mejor opción.*
 - **Si priorizas compatibilidad con la web y comunidad:** 🔄 *React Native es ideal.*
 - **Si quieres facilidad y rapidez en el desarrollo:** ⏳ *Ionic es la mejor alternativa.*
 
----
 
-**🔍 Referencias:**
 
-- [Flutter Oficial](https://flutter.dev/)
-- [React Native Oficial](https://reactnative.dev/)
-- [Ionic Framework](https://ionicframework.com/)
-
-🚀 **¡Elige la mejor plataforma según tu proyecto y empieza a desarrollar!**
