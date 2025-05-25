@@ -1,141 +1,141 @@
-# 📌 🚀 Guía Básica de Git
+# Manual de Usuario para Despliegue de la Aplicación
 
-## 🛠️ Configuración Inicial
+## Backend
 
-Antes de empezar, asegúrate de configurar tu usuario en Git:
+### Requisitos previos
 
-```sh
-# 📝 Configurar el usuario y correo
-git config --global user.name "TuNombre"
-git config --global user.email "tuemail@example.com"
-```
+- Docker y Docker Compose instalados.
+- Jenkins instalado y configurado.
+- Acceso al repositorio del proyecto backend con `Jenkinsfile` configurado.
 
-## 📂 Inicializar un Repositorio
+### Pasos para desplegar el backend
 
-```sh
-# 🏗️ Crear un nuevo repositorio local
-git init
-```
+1. Accede a la carpeta donde se encuentra el archivo `docker-compose.yml` del backend.
+  
+2. Abre una terminal (CMD o PowerShell) en esa ubicación.
+  
+3. Ejecuta el siguiente comando para iniciar los contenedores:
+  
+  ```bash
+  docker compose up -d
+  ```
+  
+4. Accede a la plataforma de Jenkins desde el navegador.
+  
+5. Crea una nueva tarea seleccionando el tipo **Pipeline**.
+  
+6. En la sección **Build Triggers**, selecciona la opción **Poll SCM** y escribe la siguiente expresión cron:
+  
+  ```bash
+  H/2 * * * *
+  ```
+  
+7. En la sección **Pipeline**, configura lo siguiente:
+  
+  - **Definition**: `Pipeline script from SCM`
+  - **SCM**: `Git`
+  - **Repository URL**: Coloca la URL del repositorio del backend.
+  - **Branches to build**: `*/main` (u otra rama correspondiente).
+  - **Script Path**: Especifica la ruta del archivo `Jenkinsfile` dentro del repositorio.
+8. Haz clic en **Save**.
+  
+9. Presiona el botón **Build Now** para ejecutar el pipeline.
+  
 
-## 🌎 Clonar un Repositorio
-
-Si quieres trabajar en un proyecto existente:
-
-```sh
-# 🔗 Clonar un repositorio
-git clone https://github.com/usuario/repositorio.git
-```
-
-## 📌 Estados Básicos en Git
-
-```sh
-# 🔍 Ver el estado actual de los archivos
-git status
-
-# 📌 Agregar un archivo específico al área de preparación
-git add archivo.txt
-
-# 📌 Agregar todos los archivos modificados
-git add .
-```
-
-## 📜 Realizar un Commit
-
-```sh
-# 📝 Confirmar los cambios con un mensaje descriptivo
-git commit -m "Descripción del cambio"
-```
-
-## 📤 Subir Cambios al Repositorio Remoto (Push)
-
-```sh
-# 📡 Enviar los cambios a la rama principal del repositorio remoto
-git push origin main
-```
-
-Si es la primera vez que haces push en una rama nueva:
-
-```sh
-# 🚀 Subir una nueva rama
-git push --set-upstream origin nombre-rama
-```
-
-## 📥 Descargar Cambios del Repositorio (Pull)
-
-```sh
-# 🔄 Obtener cambios y fusionarlos automáticamente
-git pull origin main
-```
-
-## 🌿 Manejo de Ramas
-
-```sh
-# 🔍 Ver todas las ramas locales
-git branch
-
-# 🌱 Crear una nueva rama
-git branch nombre-rama
-
-# 🔄 Cambiar a otra rama
-git checkout nombre-rama
-
-# 🚀 Crear y cambiar a una nueva rama en un solo comando
-git checkout -b nombre-rama
-```
-
-## 🔀 Fusionar Ramas
-
-```sh
-# 🔄 Cambiar a la rama principal
-git checkout main
-
-# 🔗 Fusionar cambios de otra rama
-git merge nombre-rama
-```
-
-## 🗑️ Eliminar Ramas
-
-```sh
-# ❌ Eliminar una rama local
-git branch -d nombre-rama
-
-# ❌ Eliminar una rama en el repositorio remoto
-git push origin --delete nombre-rama
-```
-
-## 🗑️ Eliminar Archivos
-
-```sh
-# 🗂️ Eliminar un archivo localmente
-git rm archivo.txt
-
-# ✅ Confirmar la eliminación
-git commit -m "Archivo eliminado"
-
-# 📤 Enviar los cambios al repositorio remoto
-git push origin main
-
-# 🚮 Eliminar un archivo en el repositorio remoto (después de eliminarlo localmente y hacer push)
-git push origin --delete archivo.txt
-```
-
-## ⚠️ Resolver Conflictos
-
-Si hay conflictos al hacer un `merge` o `pull`, Git te pedirá que resuelvas manualmente los archivos en conflicto. Luego:
-
-```sh
-# 🛠️ Marcar los archivos como resueltos
-git add archivo_resuelto.txt
-
-# 📜 Crear un commit después de resolver conflictos
-git commit -m "Conflictos resueltos"
-```
-
-## 📜 Ver el Historial de Cambios
-
-```sh
-# 🔎 Ver historial de commits
-git log --oneline --graph --all
-```
+> Esto iniciará el despliegue del backend y su base de datos en contenedores Docker.
 
 ---
+
+## Frontend
+
+### Requisitos previos
+
+- Node.js instalado.
+- Android Studio instalado y configurado.
+- Proyecto frontend basado en Ionic con Capacitor.
+
+### Pasos para desplegar y compilar la aplicación Android
+
+1. Instala las dependencias del proyecto ejecutando:
+  
+  ```bash
+  npm install
+  ```
+  
+2. **Configura la IP local para que la app se comunique correctamente con el backend:**
+  
+  - Abre una terminal como **Administrador**.
+    
+  - Ejecuta el siguiente comando:
+    
+    ```bash
+    ipconfig
+    ```
+    
+  - Busca la sección **Adaptador de LAN inalámbrica Wi-Fi**.
+    
+  - Copia la dirección que aparece en **Dirección IPv4** (por ejemplo, `192.168.1.100`).
+    
+  - En los archivos `src/environments/environment.ts` y `environment.prod.ts`, modifica el contenido así:
+    
+    ```ts
+    export const environment = {
+      production: false, // en environment.prod.ts poner true
+      apiHost: 'http://192.168.1.100',
+      apiPort: '8443',
+      apiPrefix: '/api'
+    };
+    ```
+    
+3. Agrega soporte para Android (solo la primera vez):
+  
+  ```bash
+  npm install @capacitor/android
+  npx cap add android
+  ```
+  
+4. Compila la aplicación web:
+  
+  ```bash
+  ionic build
+  ```
+  
+  > Este comando genera el contenido web en la carpeta `www/`.
+  
+5. Copia la build al proyecto Android:
+  
+  ```bash
+  npx cap copy android
+  ```
+  
+  > Ejecuta esto cada vez que hagas un nuevo `ionic build`.
+  
+6. Abre Android Studio con el proyecto Android:
+  
+  ```bash
+  npx cap open android
+  ```
+  
+7. Desde Android Studio:
+
+   - Ve al panel del proyecto y navega a la ruta:  
+     `android/app/src/main/res/xml/network_security_config.xml`
+
+   - Abre el archivo `network_security_config.xml` y busca la línea:
+
+     ```xml
+     <domain includeSubdomains="true">172.20.10.2</domain>
+     ```
+
+   - Sustituye la IP (`172.20.10.2`) por tu **Dirección IPv4** obtenida previamente (por ejemplo, `192.168.1.100`):
+
+     ```xml
+     <domain includeSubdomains="true">192.168.1.100</domain>
+     ```
+
+   - Guarda los cambios.
+
+   - Luego, en Android Studio:
+     - Compila el proyecto.
+     - Ejecuta la aplicación en un emulador o dispositivo físico, o bien genera el archivo `.apk`.
+
